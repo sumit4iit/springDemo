@@ -16,7 +16,7 @@ public class DrawingApp {
 		@SuppressWarnings("deprecation")
 //		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle");
+		Triangle triangle = (Triangle) context.getBean("triangle1");
 		triangle.draw();
 	}
 
