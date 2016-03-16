@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-init-method="myInit" default-destroy-method="cleanup">
 
     <bean id="parentTriangle" class="demo.spring.Triangle" abstract="true">
     	<property name="points">
@@ -19,7 +20,7 @@
     	</property>
    </bean>
    <bean id="triangle2" class="demo.spring.Triangle" parent="parentTriangle">
- 		<property name="pointC" ref="pointC"/>
+ 		<!--property name="pointC" ref="pointC"/-->
    </bean>
 	<bean id="pointA" class="demo.spring.Point">
 		<property name="x" value="0"/>
@@ -33,4 +34,6 @@
 		<property name="x" value="-20"/>
 		<property name="y" value="0"/>
 	</bean>
+
+	<bean class="demo.spring.DisplayNameBeanPostProcessor"></bean>
 </beans>
